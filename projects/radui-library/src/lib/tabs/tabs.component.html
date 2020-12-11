@@ -1,0 +1,5 @@
+<mat-tab-group mat-align-tabs="configText.align">
+  <mat-tab *ngFor="let tab of configText.tabitems" [label]="tab.label">
+    {{ tab.content }}
+  </mat-tab>
+</mat-tab-group>

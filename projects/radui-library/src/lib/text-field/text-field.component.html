@@ -1,0 +1,54 @@
+<!--  Plain Text code goes here -->
+<mat-form-field appearance="fill" [ngStyle]="field.style" *ngIf="field.isPlainText">
+    <mat-label>{{ field.label }}</mat-label>
+
+    <input [ngStyle]="field.style" matInput type="text" placeholder="{{ field.placeHolder }}" [(ngModel)]="field.value" />
+</mat-form-field>
+<!--  Plain Text code ends here -->
+&nbsp;&nbsp;
+<!--  Clear Text code goes here -->
+<mat-form-field appearance="fill" [ngStyle]="field.style" *ngIf="field.reqdClearing">
+    <mat-label>{{ field.label }}</mat-label>
+    <input [ngStyle]="field.style" matInput type="text" placeholder="{{ field.placeHolder }}" [(ngModel)]="field.value" />
+    <button mat-button *ngIf="field.value" matSuffix mat-icon-button aria-label="Clear" (click)="field.value = ''">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+<!--  Clear Text code end here -->
+&nbsp;&nbsp;
+<!--  Email Text code goes here -->
+<mat-form-field appearance="fill" [ngStyle]="field.style" *ngIf="field.isEmail">
+    <mat-label>{{ field.label }}</mat-label>
+
+    <input [ngStyle]="field.style" matInput placeholder="{{ field.placeHolder }}" [formControl]="emailFormControl" [errorStateMatcher]="matcher" />
+    <mat-error *ngIf="
+      emailFormControl.hasError('email') &&
+      !emailFormControl.hasError('required')
+    ">
+        Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email is
+        <strong>required</strong>
+    </mat-error>
+</mat-form-field>
+<!--  Email Text code ends here -->
+&nbsp;&nbsp;
+<!--  password code goes here -->
+<mat-form-field appearance="fill" [ngStyle]="field.style" *ngIf="field.isPassword">
+    <mat-label>{{ field.label }}</mat-label>
+    <input [ngStyle]="field.style" matInput [type]="hide ? 'password' : 'text'" />
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+    <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+  </button>
+</mat-form-field>
+<!--  password code ends here -->
+&nbsp;&nbsp;
+<!--  Phone code goes here -->
+<mat-form-field appearance="fill" [ngStyle]="field.style" *ngIf="field.isPhone">
+    <mat-label>{{ field.label }}</mat-label>
+    <span matPrefix>+1 &nbsp;</span>
+    <input [ngStyle]="field.style" type="tel" matInput placeholder="555-555-1234" [(ngModel)]="field.value" />
+    <mat-icon matSuffix>mode_edit</mat-icon>
+</mat-form-field>
+<!--  Phone code ends here -->

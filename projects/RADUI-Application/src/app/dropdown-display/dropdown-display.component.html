@@ -1,0 +1,31 @@
+<radui-dropdown [field]="dropDownConfig" > </radui-dropdown>
+<div class="row">
+    Label : <input type = "text"  [value]="dropDownConfig.label" [(ngModel)]="dropDownConfig.label"  >
+</div>
+    
+<div class="row">
+     <label> Style </label>   
+    <textarea [ngStyle]="{'height':'100px','width':'200px'}" [value]="style" [(ngModel)]="style" (ngModelChange)="onStyleChange()" ></textarea>
+</div>
+<div class="row">
+    <label class="radio-inline" >  Do you want Material dropdown: 
+       <input  type="radio" value="true" name="MatYes" class="form-control" 
+        (change)="selectMaterialHandler()" [(ngModel)]="selectedMaterialComp"> 
+            <span>YES</span>
+          <input  type="radio" value="false" name="MatNo" class="form-control" 
+          (change)="selectMaterialHandler()" [(ngModel)]="selectedMaterialComp"> 
+          <span>NO</span>
+        </label>
+</div>
+<div class="row">
+    <label class="radio-inline" >  Disabled : 
+       <input  type="radio" value="true" name="YES" class="form-control" 
+        (change)="selectHandler()" [(ngModel)]="selectedOption"> 
+            <span>YES</span>
+          <input  type="radio" value="false" name="NO" class="form-control" 
+          (change)="selectHandler()" [(ngModel)]="selectedOption"> 
+          <span>NO</span>
+        </label>
+</div>
+
+

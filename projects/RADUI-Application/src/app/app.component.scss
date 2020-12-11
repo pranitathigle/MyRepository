@@ -1,0 +1,33 @@
+$basecolor: #0070ad;
+$mainFont: "interstate",
+"sans-serif";
+$fontWeight: 400;
+$fontStyle: normal;
+$backgroundColorMain: white;
+$mobile: 576px;
+$tablet: 768px;
+$large-tablet: 992px;
+$desktop: 1200px;
+$max-width: 1280px;
+$max-height: 768px;
+.app {
+    max-width: $max-width;
+    margin: auto;
+    font-weight: $fontWeight;
+    font-family: $mainFont;
+    color: $basecolor;
+    .outer-div {
+        text-align: center;
+    }
+     .inner-div {
+        margin-right: 10px;
+    }
+    .margin-link {
+        margin-right: 10px;
+        color: $basecolor;
+    }
+    a {
+        color: $basecolor;
+    }
+    
+}

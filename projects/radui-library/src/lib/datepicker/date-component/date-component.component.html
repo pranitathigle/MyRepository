@@ -1,0 +1,8 @@
+
+<mat-form-field class="example-full-width">
+    <mat-label>{{customCalenderHeader}}</mat-label>
+    <input matInput [matDatepicker]="picker" [formControl]="dateTest">
+    <mat-datepicker-toggle matSuffix [for]="picker">
+    </mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>

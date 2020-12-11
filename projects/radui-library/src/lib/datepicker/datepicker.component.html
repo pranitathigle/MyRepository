@@ -1,0 +1,11 @@
+<!--
+<div style="text-align: center;">
+  <app--date-component [customCalenderHeader]="'Add Custom Text'"></app--date-component>
+</div> -->
+<mat-form-field class="example-full-width" [ngStyle]="dateStyle()">
+    <mat-label>{{customDateText}}</mat-label>
+    <input matInput [matDatepicker]="picker" [formControl]="dateTest">
+    <mat-datepicker-toggle matSuffix [for]="picker">
+    </mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>

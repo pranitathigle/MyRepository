@@ -1,0 +1,24 @@
+<div class="app">
+    <div class="outer-div">
+        <img class="inner-div" src="../assets/cg logo.png" />
+        <lib-RADUI-Library class="inner-div">
+        </lib-RADUI-Library>
+
+    </div>
+    <div class="outer-div">
+
+        <a id="home" [routerLink]="['/home']" title="Go to Home" routerLinkActive="active" style="margin-right: 10px;"> Home</a>
+        <a id="generator" [routerLink]="['/form-generator']" title="Go to Form Generator" routerLinkActive="active" style="margin-right: 10px;"> Form Generator</a>
+        <a id="dynamic" [routerLink]="['/dynamic']" title="Go to Dynamic Form" routerLinkActive="active" style="margin-right: 10px;">Dynamic</a>
+        <a id="acg" [routerLink]="['/acg']" title="Go to ACG" routerLinkActive="active"> ACG Demo</a>
+        <a id="button-display" [routerLink]="['/button-display']" title="Button" routerLinkActive="active"> Button</a>
+        <a id="textarea-display" [routerLink]="['/textarea-display']" title="TextArea" routerLinkActive="active"> TextArea</a>
+        <a id="text-field-display" [routerLink]="['/text-field-display']" title="TextField" routerLinkActive="active"> TextField</a>
+        <a id="radio-display" [routerLink]="['/radio-display']" title="Radio" routerLinkActive="active"> Radio</a>
+        <a id="accordion-display" [routerLink]="['/accordion-display']" title="Accordion" routerLinkActive="active"> Accordion</a>
+        <a id="checkbox-display" [routerLink]="['/checkbox-display']" title="Checkbox" routerLinkActive="active"> Checkbox</a>
+        <a id="dropdown-display" [routerLink]="['/dropdown-display']" title="Dropdown" routerLinkActive="active"> Dropdown</a>
+    </div>
+
+    <router-outlet></router-outlet>
+</div>

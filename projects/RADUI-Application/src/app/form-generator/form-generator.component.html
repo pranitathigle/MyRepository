@@ -1,0 +1,129 @@
+<div>
+    <h1>Form Engine working demo</h1>
+</div>
+<div>
+    <lib-textarea [group]="formGroup" [field]="textAreaFieldConfig"></lib-textarea> <br/>
+    <radui-button [field]="buttonConfig"></radui-button> <br/>
+   <!--  <lib-radio [group]="group" [field]="radioConfig"></lib-radio> <br/>
+    <lib-select [group]="group" [field]="selectConfig"></lib-select> <br/>
+    <lib-input [group]="group" [field]="inputConfig"></lib-input> <br/>
+   <lib-checkbox [group]="group" [field]="selectConfig"></lib-checkbox> <br/>-->
+  
+</div>
+
+<lib-form-engine *ngIf="formConfig" [fields]="formConfig" [mapper]="mapper"></lib-form-engine>
+<div>
+    <h3>Sample JSON</h3>
+    <pre class="language-markup">
+        <code class="language-markup">
+            &#123;
+                "showField":true,
+                "name":"input",
+                "children":[
+                    &#123;
+                        "type":"container",
+                        "className":"card",
+                        "showField":"true",
+                        "name":"allInputFields",
+                        "children":[
+                        &#123;
+                                "type" : "select",
+                                "label": "Select Field show JSON",
+                                "selectOptionName":"fieldSelector",
+                                "eventName" : "select:onSelectField",
+                                "className": "col-sm-8",
+                                "labelClass":"col-md-12",
+                                "showField":true,
+                                "isMaterialComponent":false,
+                                "placeHolder":"Add New Value",
+                                "options":[
+                                &#123;"value":"","label":"Select one" &#125;,
+                                &#123;"value":"input-fields","label":"Input Field" &#125;,
+                                &#123;"value":"radio","label":"Radio Field" &#125;,
+                                &#123;"value":"checkbox","label":"Checkbox Field" &#125;
+                                ],
+                                "validations" : []
+                        &#125;,
+                       
+                        &#123;
+                                "type" : "radio",
+                                "label": "Radio option show JSON",
+                                "radioOptionName":"fieldSelector",
+                                "eventName" : "select:onRadioField",
+                                "className": "col-sm-8",
+                                "labelClass":"col-md-12",
+                                "showField":true,
+                                "style": &#123;"background-color":"pink"&#125;,
+                                "options":[
+                                &#123;"value":"Yes","label":"YES" &#125;,
+                                &#123;"value":"No","label":"NO" &#125;
+                                
+                                ],
+                                "validations" : []
+                        &#125;,
+                        &#123;
+                                "type" : "textarea",
+                                "name":"formJsonText",
+                                "labelClass":"col-md-12",
+                                "inputClass":"col-md-12",
+                                "label": "TextArea option show JSON",
+                                "showField":true,
+                                "maxLength":3000000,
+                                "style": &#123;"height":"200px","width":"600px"&#125;,
+                                "validations" : [
+                                &#123;
+                                    "name":"required",
+                                    "message":"Please enter Form Engine JSON."
+                                &#125;
+                                ]
+                        &#125;,
+                        &#123;
+                                "type" : "button",
+                                "fieldtype" : "flat",
+                                "name":"Button",
+                                "labelClass":"col-sm-4 col-xs-12",
+                                "btnClass":"btn-primary",
+                                "label": "TEST BUTTON",
+                                "showField":true,
+                                "eventName":"",
+                                "style": &#123;"background-color":"pink"&#125;
+                        &#125;,
+                         &#123;
+                                "type" : "checkbox",
+                                "fieldtype": "checkbox",
+                                "label": "Select Field show JSON",
+                                "selectOptionName":"fieldSelector",
+                                "eventName" : "select:onSelectField",
+                                "className": "col-sm-8",
+                                "labelClass":"col-md-12",
+                                "showField":true,
+                                "options":[
+                                &#123;"value":"","label":"Select one" &#125;,
+                                &#123;"value":"input-fields","label":"Input Field" &#125;,
+                                &#123;"value":"radio","label":"Radio Field" &#125;,
+                                &#123;"value":"checkbox","label":"Checkbox Field" &#125;
+                                ],
+                                "validations" : []
+                        &#125;,
+                        &#123;
+                                "type": "input",
+                                "fieldtype": "input",
+                                "label": "Input box",
+                                "showField": "true",
+                                "disabled": "true",
+                                "isPhone":"true",
+                                "isPassword": "true",
+                                "isEmail": "false",
+                                "reqdClearing": "true",
+                                "isPlainText": "true",
+                                "style":&#123;"height":"30px"&#125;,
+                                "validations": []
+                          &#125;
+                        ]
+                    &#125;
+                ]
+                &#125;
+        </code>
+    </pre>
+</div>
+

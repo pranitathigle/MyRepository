@@ -1,0 +1,31 @@
+<!-- <div class="form-group {{field.className}}"
+*ngIf="field && field.showField"
+libFormGroupHighlight [ngClass]="{'ng-invalid has-error':hasError(),'tile-selectors':field.subType === 'tile'}"
+[formGroup]="group"> -->
+
+<div class="row" *ngIf="field.label">
+    
+    <div class="{{field.labelClass}} label-block">
+        <label class = "control-label" *ngIf = "field.label" >{{field.label}}</label>
+        <small-class="help-block" *ngIf="field.extraLabel">{{field.extraLabel}}</small-class>
+    </div>
+</div>
+
+   <div class="row">
+        <div class="checkbox col-sm-4 col-md-3" *ngFor="let option of field.options">
+            <label [ngClass]="{'checkbox-active': option.checked, 'input-disabled':field.disabled}" 
+            [attr.disabled]="field.disabled?field.disabled:null">
+             <input type="checkbox" [value]="option.value" name="{{field.name}}" 
+                     [checked]="option.checked" (change)="option.checked= !option.checked;selectHandler(option);"> 
+                    <span>
+                      <ng-container *ngIf="option.icon">
+                          <i class="icon icon-2x hidden-xs" [ngClass]="option.icon"></i>
+                          <br class="hidden-xs">
+                      </ng-container>
+                      {{option.label}}
+                    </span> 
+            </label>
+        </div>
+    </div>    
+ 
+<!-- </div> -->

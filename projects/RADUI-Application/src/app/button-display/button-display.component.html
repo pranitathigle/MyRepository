@@ -1,0 +1,45 @@
+<div class=col-centered style="margin-left:500px; margin-right:500px;font-family: interstate, sans-serif;">
+    <div class=row style="margin-top:50px" >
+    <radui-button [field]="buttonConfig" > </radui-button>
+</div> 
+<div class=row style="margin-top:50px;font-weight: bold" >
+<section>
+    <label style="margin-bottom: 20px"> FieldType: </label>
+    <mat-select  placeholder="BUTTON TYPE" [(ngModel)]="buttonConfig.fieldtype"   >      
+         <mat-option value="flat"> FLAT </mat-option>
+        <mat-option value="raised"> RAISED </mat-option>
+        <mat-option value="stroked"> STROKED </mat-option>
+    </mat-select>
+</section>
+
+</div> 
+<div class=row style="margin-top:10px" >
+
+<section>  
+    <div class=row>
+    <label style="margin-bottom: 10px;font-weight: bold"> Style </label> 
+</div>
+<div class=row>
+   <textarea [ngStyle]="{'height':'100px','width':'300px','margin-top':'5px'}" [value]="style" [(ngModel)]="style" (ngModelChange)="onStyleChange()" ></textarea>
+</div>
+</section>
+</div>
+<div class=row style="margin-top:10px" >
+<section>
+   <label class="radio-inline">  Disabled : 
+      <input  type="radio" value="true" name="YES" class="form-control" 
+       (change)="selectHandler()" [(ngModel)]="selectedOption"> 
+           <span>YES</span>
+         <input  type="radio" value="false" name="NO" class="form-control" 
+         (change)="selectHandler()" [(ngModel)]="selectedOption"> 
+         <span>NO</span>
+       </label>
+</section>
+</div> 
+    
+</div>
+
+
+
+
+ 

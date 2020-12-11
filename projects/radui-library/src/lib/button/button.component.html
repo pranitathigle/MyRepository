@@ -1,0 +1,34 @@
+      <section *ngIf="field.fieldtype==='flat'">
+        <div class="example-button-row">
+          <!-- <button mat-flat-button>{{configButton.label}}</button> -->
+          <button [ngStyle]="field.style" mat-flat-button color="primary" (click)="onClickBtn()">{{field.label}}</button>
+          <!-- <button mat-flat-button color="accent">{{configButton.label}}</button>
+          <button mat-flat-button color="warn">{{configButton.label}}</button>
+          <button mat-flat-button disabled>{{configButton.label}}</button>
+          <a mat-flat-button href="https://www.google.com/" target="_blank">{{configButton.label}}</a> -->
+        </div>
+      </section>
+      <section *ngIf="field.fieldtype==='raised'">
+        <div class="example-button-row">
+        <!-- <button mat-raised-button>{{field.label}}</button> -->
+          <button [ngStyle]="field.style" mat-raised-button color="primary" (click)="onClickBtn()">{{field.label}}</button>
+          <!-- <button mat-raised-button color="accent">{{configButton.label}}</button>
+          <button mat-raised-button color="warn">{{configButton.label}}</button>
+          <button mat-raised-button disabled>{{configButton.label}}</button>
+          <a mat-raised-button href="https://www.google.com/" target="_blank">{{configButton.label}}</a> -->
+        </div>
+      </section>
+      
+      <section *ngIf="field.fieldtype==='stroked'">
+        <div class="example-button-row">
+          <!-- <button mat-stroked-button>{{configButton.label}}</button> -->
+          <button [ngStyle]="field.style" mat-stroked-button color="primary" (click)="onClickBtn()">{{field.label}}</button>
+          <!-- <button mat-stroked-button color="accent">{{configButton.label}}</button>
+          <button mat-stroked-button color="warn">{{configButton.label}}</button>
+          <button mat-stroked-button disabled>{{configButton.label}}</button>
+          <a mat-stroked-button href="https://www.google.com/" target="_blank">{{configButton.label}}</a> -->
+        </div>
+      </section>
+      <mat-divider></mat-divider>
+      
+      

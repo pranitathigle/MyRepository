@@ -1,0 +1,53 @@
+<!-- <mat-radio-group aria-labelledby="-radio-group-label" [ngClass]="{
+    '-radio__group--horizontal': orientation === 'horizontal',
+    '-radio__group--vertical': orientation === 'vertical'
+  }" [(ngModel)]="selectedValue" class="-radio__group">
+    <mat-radio-button class="-radio__group--button" *ngFor="let values of radioValues" [value]="values">
+        {{ values }}
+    </mat-radio-button>
+</mat-radio-group>
+<div>Selected Value is: {{ selectedValue }}</div> -->
+
+<div class="row" *ngIf="field.label">
+    
+  <div class="{{field.labelClass}} label-block">
+      <label class = "control-label" *ngIf = "field.label" >{{field.label}}</label>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <ng-container [ngSwitch] = "field.subType">
+      <ng-container *ngSwitchCase="'vertical'">
+        <ng-container *ngTemplateOutlet="radioVTempRef"></ng-container>
+      </ng-container>
+      <ng-container *ngSwitchDefault>
+        <ng-container *ngTemplateOutlet="radioHTempRef"></ng-container>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
+
+<div>
+<ng-template #radioVTempRef>
+  <div class="radio" *ngFor="let option of field.options">
+    <label class="radio-inline" [attr.disabled]="field.disabled?field.disabled: null">
+      <input type="radio" [ngStyle]="field.style" value="{{option.value}}" name="{{field.name}}"  required
+      class="form-control" [attr.disabled]="field.disabled?field.disabled: null"
+      (change)="selectHandler()" [(ngModel)]="selectedOption">
+      <span>{{option.label}}</span>
+    </label>
+  </div>
+</ng-template>
+
+<ng-template #radioHTempRef>
+  <div>
+    <label class="radio-inline" *ngFor="let option of field.options" [attr.disabled]="field.disabled?field.disabled:null">
+      <input  class="e-primary" type="radio" [ngStyle]="field.style" value="{{option.value}}" name="{{field.name}}" 
+      class="form-control" [attr.disabled]="field.disabled?field.disabled: null"
+      (change)="selectHandler()" [(ngModel)]="selectedOption"> 
+      <span>{{option.label}}</span>
+    </label>
+  </div>
+</ng-template>
+</div>

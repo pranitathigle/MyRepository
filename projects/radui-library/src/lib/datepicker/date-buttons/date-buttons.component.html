@@ -1,0 +1,12 @@
+<button mat-button color="primary" (click)="getDate('YYMMDD')">YYMMDD</button>
+<button mat-button color="primary" (click)="getDate('MMDDYY')">MMDDYY</button>
+<button mat-button color="primary" (click)="getDate('MonthName')">MonthName</button>
+<div *ngIf="date==='YYMMDD'">
+    <radui-date-component [customCalenderHeader]="'Test'"></radui-date-component>
+</div>
+<div *ngIf="date==='MMDDYY'">
+    <radui-date-component [customCalenderHeader]="'Get Your Date'"></radui-date-component>
+</div>
+<div *ngIf="date=== 'MonthName'">
+    <radui-date-component [customCalenderHeader]="'Get your Date 2'"></radui-date-component>
+</div>

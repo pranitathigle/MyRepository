@@ -1,0 +1,44 @@
+ <!-- <lib-RADUI-Library></lib-RADUI-Library>
+ <radui-checkbox [field]="selectConfig" [group]="formGroup"></radui-checkbox>
+<radui-radio [field]="currentPlanRadioConfig" [group]="formGroup"></radui-radio>
+<radui-radio [field]="availablePlanRadioConfig" [group]="formGroup"></radui-radio>  -->
+<!-- <radui-dropdown [field]="dropDownConfig" [group]="formGroup"></radui-dropdown>  
+<radui-dropdown [field]="dropDownConfig1" [group]="formGroup"></radui-dropdown>  -->
+<!-- <radui-button [field]="buttonConfig" ></radui-button> -->
+ <!-- <radui-button [field]="buttonConfig" ></radui-button>  -->
+    <radui-accordion [fieldMap]="fieldMap" [field]="accordionConfig" > </radui-accordion>  
+  <!-- <radui-text-field [field]="inputConfig"></radui-text-field> -->
+   
+   <!-- <radui-dropdown [field]="dropDownConfig1" [group]="formGroup"></radui-dropdown>  -->
+
+ <!-- <radui-dropdown [field]="numberOfPanelConfig" [group]="formGroup"></radui-dropdown>
+
+ <div class="row" >
+    <div >
+        <label class = "control-label"  >Please Select Number Of Panels</label>
+    </div>
+  </div>
+  <div class="row">
+    <div >
+      <div class="select-container">
+        <select class="form-control" (change)="selectHandler()" 
+        [(ngModel)]="selectedValue" >
+        <option [ngValue] = "undefined" selected="selected"  >Select</option>
+        <option [ngValue] = "item.value" *ngFor = "let item of numberOfPanel.options"> {{item.label}}</option>
+    </select>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="selectedValue!==undefined" class="row">
+    
+     
+    <div *ngFor="let accordion of accordionMap | keyvalue;let i=index">
+        <div><label>Accordion {{i}}</label><div>
+           <ng-container *ngFor="let component of accordion.value">
+                <input  type="checkbox" value="component.type" [checked]="component.checked" (change)="component.checked = !component.checked;getComponentOption()" >{{component.label}}
+           </ng-container>
+    </div>
+    
+  </div> -->
+
+

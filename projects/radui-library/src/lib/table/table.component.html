@@ -1,0 +1,17 @@
+<div class="example-header">
+    <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+</div>
+
+<table mat-table [dataSource]="mattabledataSource" matSort class="mat-elevation-z8">
+    <ng-container *ngFor="let col of displaycolumndefs" matColumnDef="{{col.columnDef}}">
+        <div>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>{{col.header}} </th>
+            <td mat-cell *matCellDef="let element">{{ col.cell(element) }}</td>
+        </div>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>

@@ -1,0 +1,64 @@
+<mat-accordion 
+>
+
+<mat-expansion-panel 
+[disabled]="panel.isDisabled"
+[expanded]="panel.isExpanded"
+[hideToggle]="true"
+(opened)="beforePanelOpened(panel)"
+(closed)="beforePanelClosed(panel)"
+(afterCollapse)="afterPanelClosed()"
+(afterExpand)="afterPanelOpened()"
+
+*ngFor="let panel of fieldMap | keyvalue:asIsOrder;let i = index"
+#mapanel="matExpansionPanel"
+>
+<mat-expansion-panel-header [ngStyle]="panelheader">
+  <mat-panel-title>
+    <b> Panel {{i}}</b>
+  </mat-panel-title>
+  <mat-panel-description>
+  </mat-panel-description>
+</mat-expansion-panel-header>
+<ng-template matExpansionPanelContent>
+  <ng-container *ngFor = "let componentType of panel.value">
+    <ng-container *ngIf="componentType.fieldtype==='dropdown'">
+      <ng-container *ngFor="let dropdown of dropDownMap | keyvalue" >
+      <ng-container *ngIf="dropdown.key === 'dropdown_panel'+i">
+        <radui-dropdown  [field]="dropdown.value"></radui-dropdown>
+      </ng-container>
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngIf="componentType.fieldtype==='checkbox'">
+      <ng-container *ngFor="let checkbox of checkboxMap | keyvalue" >
+        <ng-container *ngIf="checkbox.key === 'checkbox_panel'+i">
+          <radui-checkbox  [field]="checkbox.value"></radui-checkbox>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+  
+    <ng-container *ngIf="componentType.fieldtype==='radio'">
+      <ng-container *ngFor="let radio of radioMap | keyvalue" >
+      <ng-container *ngIf="radio.key === 'radio_panel'+i">
+        <radui-radio  [field]="radio.value"></radui-radio>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngIf="componentType.fieldtype==='button'">
+      <ng-container *ngFor="let button of buttonMap | keyvalue" >
+      <ng-container *ngIf="button.key === 'button_panel'+i">
+        <radui-button  [field]="button.value"></radui-button>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+    
+    
+  
+</ng-template>
+
+</mat-expansion-panel>
+</mat-accordion> 
+

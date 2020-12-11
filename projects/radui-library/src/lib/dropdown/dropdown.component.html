@@ -1,0 +1,36 @@
+<div *ngIf="field && field.showField"
+    libFormGroupHighlight [formGroup]="group" 
+    [ngClass] = "{'ng-invalid has-error' : hasError()}"   >
+    <div class="row" *ngIf="field.label">
+      <div class="{{field.labelClass}} label-block">
+        <label class = "control-label" *ngIf = "field.label" >{{field.label}}</label>
+      </div>
+  </div>
+
+  <div class="row" *ngIf="!field.isMaterialComponent">
+    <div class="{{field.className}}">
+      <div class="select-container">
+        <select class="form-control" (change)="selectHandler()" 
+        [(ngModel)]="selectedValue" formControlName ="selectOptionNameDynamic">
+        <option [ngValue] = "undefined" selected="selected"  hidden>Select</option>
+        <option [ngValue] = "item.value" *ngFor = "let item of field.options" > {{item.label}}</option>
+        <lib-validation-error *ngIf="_hasError" [message]="errorMessage" [field]="field.label">
+        </lib-validation-error>
+      </select>
+      </div>
+    </div>
+  </div>
+   <div class="row" *ngIf="field.isMaterialComponent">
+    
+      <mat-select  placeholder="{{field.placeHolder}}" [disabled]="field.disabled" [(ngModel)]="selectedValue"  name="selected"  formControlName ="selectOptionNameDynamic"  >      
+        <mat-option        *ngFor="let value of field.options"    
+        [value]="value.value"      >        {{ value .label}}      
+        </mat-option>    </mat-select>
+        
+  </div>
+
+  <div class="row">
+    Selected Value is: {{ selectedValue }}
+  </div>
+</div>
+<mat-divider></mat-divider>

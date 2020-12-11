@@ -1,0 +1,18 @@
+.-radio {
+    &__group {
+        display: flex;
+        margin: 15px 0;
+        &--horizontal {
+            flex-direction: column;
+        }
+        &--vertical {
+            flex-direction: row;
+        }
+        &--button {
+            margin: 5px;
+        }
+    }
+}
+.radio-inline input:checked ~ .checkmark {
+    background-color: red;
+  }

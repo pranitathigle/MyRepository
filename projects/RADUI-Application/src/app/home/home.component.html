@@ -1,0 +1,64 @@
+<div class="container">
+    <radui-carousel></radui-carousel>
+    <mat-card class="outer-card">
+        <mat-card class="main-card">
+            <mat-card-header>
+                <p class="inner-text"> Table </p>
+                <button (click)="toggleTableShow()" type="button" class="toggleButton">
+              <i id="toggle" class="fas fa-minus-circle"></i>
+            </button>
+            </mat-card-header>
+
+
+            <radui-table *ngIf="isTableShown" data-aos="flip-up"></radui-table>
+        </mat-card>
+    </mat-card>
+    <mat-card>
+        <mat-card class="main-card">
+            <mat-card-header>
+                <p class="inner-text"> Card </p>
+                <button (click)="toggleCardShow()" type="button" class="toggleButton">
+            <i id="toggle" class="fas fa-minus-circle"></i>
+          </button>
+            </mat-card-header>
+            <radui-card [field]="selectConfig" *ngIf="isCardShown" data-aos="flip-up"></radui-card>
+            <radui-card [field]="selectConfig" *ngIf="isCardShown" data-aos="flip-up"></radui-card>
+            <radui-card [field]="selectConfig" *ngIf="isCardShown" data-aos="flip-up"></radui-card>
+        </mat-card>
+    </mat-card>
+    <mat-card>
+        <mat-card class="main-card">
+            <mat-card-header>
+                <p class="inner-text"> Checkbox </p>
+                <button (click)="toggleCheckboxShow()" type="button" class="toggleButton">
+          <i id="toggle" class="fas fa-minus-circle"></i>
+        </button>
+            </mat-card-header>
+
+            <radui-checkbox [field]="selectConfig" *ngIf="isCheckboxShown" data-aos="flip-up"></radui-checkbox>
+        </mat-card>
+    </mat-card>
+    <mat-card>
+        <mat-card class="main-card">
+            <mat-card-header>
+                <p class="inner-text"> Radio </p>
+                <button (click)="toggleRadioShow()" type="button" class="toggleButton">
+        <i id="toggle" class="fas fa-minus-circle"></i>
+      </button>
+            </mat-card-header>
+
+            <radui-radio [field]="availablePlanRadioConfig" *ngIf="isRadioShown" data-aos="flip-up"></radui-radio>
+        </mat-card>
+    </mat-card>
+    <mat-card>
+        <mat-card class="main-card">
+            <mat-card-header>
+                <p class="inner-text"> Dropdown </p>
+                <button (click)="toggleDropdownShow()" type="button" class="toggleButton">
+      <i id="toggle" class="fas fa-minus-circle"></i>
+    </button>
+            </mat-card-header>
+            <radui-dropdown [field]="dropDownConfig" [group]="formGroup" *ngIf="isDropdownShown" data-aos="flip-up"></radui-dropdown>
+        </mat-card>
+    </mat-card>
+</div>

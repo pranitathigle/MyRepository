@@ -1,0 +1,18 @@
+<form [formGroup]="form">
+    <ng-container *ngFor = "let fieldConfig of fields.children">
+        <ng-template [ngTemplateOutlet] = "nodeTemplateRef" [ngTemplateOutletContext] = " { $implicit: fieldConfig }">
+        </ng-template>
+    </ng-container>
+    <ng-template #nodeTemplateRef let-fieldConfig>
+        <ng-container *ngIf="fieldConfig && fieldConfig.children && fieldConfig.children.length > 0 else fieldTempRef">
+            <div [ngClass] = "fieldConfig.className" *ngIf = "fieldConfig.children.length && fieldConfig.showField">
+                <ng-template ngFor [ngForOf]="fieldConfig.children" [ngForTemplate]="nodeTemplateRef">
+                </ng-template>
+            </div>
+        </ng-container>
+        <ng-template #fieldTempRef>
+            <ng-container libFormEngine [field] = "fieldConfig" [group] = "form" [mapper]="mapper">
+            </ng-container>
+        </ng-template>
+    </ng-template>
+</form>

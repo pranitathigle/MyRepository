@@ -1,0 +1,24 @@
+<!-- <mat-form-field appearance="fill">
+    <mat-label>{{field.label}}</mat-label> -->
+
+    <div *ngIf="field && field.showField"
+    libFormGroupHighlight [formGroup]="group"
+    [ngClass] = "{'ng-invalid has-error' : hasError()}"   >
+        <div class="row" *ngIf="field.label">
+          <div class="{{field.labelClass}} label-block">
+            <label class = "control-label" *ngIf = "field.label" >{{field.label}}</label>
+        </div>
+      </div>
+        <textarea [ngStyle]="field.style" matInput 
+            [formControlName]="field.name"
+             maxLength="{{field.maxLength}}"
+             (change)="contentChangeHandler($event)"
+             [value]="field.value && field.value.length <=field.maxLength?field.value: ''"
+        ></textarea>
+        </div>
+        <div class="row" *ngIf="_hasError">
+          <div class="{{field.inputClass}}">
+              <lib-validation-error *ngIf="_hasError" [message]="errorMessage" [field]="field.label"></lib-validation-error>
+          </div>
+      </div>
+<!-- </mat-form-field> -->

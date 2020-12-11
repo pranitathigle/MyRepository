@@ -1,0 +1,19 @@
+$basecolor: #0070ad;
+table {
+    width: 100%;
+    border-color: $basecolor;
+    border-style: ridge;
+}
+
+.mat-row:nth-child(even) {
+    background-color: #eceeee;
+}
+
+.mat-row:nth-child(odd) {
+    background-color: white;
+}
+
+.mat-cell {
+    // text-align: center;
+    // justify-content: center;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Clinical Table Search Service</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.1.0/jquery-migrate.js"></script>
+
+<style>
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+<body>
+<h3>Clinical Table Search Service</h3>
+<div style="margin:20px">
+<input type="text" id ="searchField"/>
+<input type="button" id="searchButton" value="Search" />
+
+<br/>
+<br/>
+<br/>
+
+
+<table id= "npi" style="display: none; border:2px;"   >
+
+<tr>
+<th>Address</th>
+<th> Name</th> 
+<th> NPI</th>
+</tr>
+<tr>
+<td>560 LOBLOLLY LN, CHARLOTTESVILLE, VA 22903</td>
+<td>BERNARD M. WILLIAMS, MD</td>
+<td>1801338579</td>
+</tr>
+</table>
+
+
+<table id= "name"style="display: none">
+
+<tr>
+<th>Address</th>
+<th> Name</th> 
+<th> NPI</th>
+</tr>
+<tr>
+<td>560 LOBLOLLY LN, CHARLOTTESVILLE, VA 22903</td>
+<td>BERNARD M. WILLIAMS, MD</td>
+<td>1801338579</td>
+</tr>
+
+<tr>
+<td>305 LANGDON ST, SOMERSET, KY 42503</td>
+<td>BERNARD WILLIAMS</td>
+<td>1083793012</td>
+</tr>
+
+
+<tr>
+<td>5782 MAIN ST, WILLIAMSVILLE, NY 14221</td>
+<td>DR BERNARD M EISEN</td>
+<td>1578605036</td>
+</tr>
+
+
+</table>
+</div>
+</body>
+
+<script>
+$(document).ready(function() {
+	$("#searchButton").click(function() {
+		var bla = $('#searchField').val();
+		if(bla == "560 20LOBLOLLY 20LN, 20CHARLOTTESVILLE, 20VA 2022903")
+		{
+		document.getElementById("npi").style.display = "block";
+		document.getElementById("name").style.display = "none";
+		}
+		else if (bla == "BERNARD M. WILLIAMS, MD")
+			{
+			document.getElementById("name").style.display = "block";
+		document.getElementById("npi").style.display = "none";
+			}
+		else
+			{
+			document.getElementById("npi").style.display = "block";
+		document.getElementById("name").style.display = "none";
+			}
+	});
+});
+</script>
+</html>
